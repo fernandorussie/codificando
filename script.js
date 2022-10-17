@@ -30,6 +30,7 @@ btn.addEventListener("click", function(ev) {
         arrString.push(arr2)
     }
     
+    
     console.log(arr);
     console.log(arrString)
     // console.log(arr2.fromCharCode());  // retorna "ABC"
