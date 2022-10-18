@@ -9,9 +9,21 @@
 </head>
 <body>
     <h2>Cifra de Cesar</h2>
-    <form>
-        <input id="input-text" type="text" placeholder="Digite sua mensagem">
-        <input id="desloc" type="number" placeholder="Digite o nivel">
+    <form class="form">
+        <input id="input-text" type="text" placeholder="Digite sua mensagem" required maxlength="14">
+        <input id="desloc" type="number" placeholder="Digite o nivel" min="1" max="25" required maxlength="2">
+
+        <div>
+            <label for="codificar">
+                Codificar
+                <input type="radio" name="change" id="codificar" value="codificar">
+            </label>
+            <label for="decodificar">
+                Decodificar
+                <input type="radio" name="change" id="decodificar" value="decodificar">
+            </label>
+        </div>
+
         <input id="btn" type="button" value="Enviar">
     </form>    
     <div>
