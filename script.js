@@ -14,61 +14,69 @@
  
 var btn = document.querySelector("#btn");
 var result = document.querySelector("#result");
-var form = document.querySelector(".form")
-var codific = document.querySelector('#codificar').value;
+var form = document.querySelector(".form");
 
 
 btn.addEventListener("click", function(ev) {
+    var radio = document.querySelector('input[name="change"]:checked').value;
     if(form.checkValidity()){
-        if(codific == 'codificar'){
-            console.log(form.change.value)
-            ev.preventDefault();
+        ev.preventDefault();
         
+        if(radio === "true"){
             var desloc = document.querySelector("#desloc").value;
             var letra = document.querySelector("#input-text").value;
             var alfab = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
-            var codLetra1 = 'A'.charCodeAt(0)
+            var codLetra1 = 'A'.charCodeAt(0);
             var arrConvert = [];
             var str = "";
             var newArrConvert = [];
-        
-            console.log("\n")
-            console.log(`Tamanho do array de alfabeto ${alfab.length}`)
-            console.log(`Letra digitada: ${letra}`)
-            console.log(`Posição da letra digitada ${letra.charCodeAt(0)}`)
-            console.log(`Posição da primeira letra do alfabeto: A = ${codLetra1}`)
-            console.log("\n")
+    
             for(var i = 0; i < letra.length; i++) {
-                arrConvert.push(((letra.charCodeAt(i) - codLetra1 + parseInt(desloc)) % (alfab.length+1)) + codLetra1); 
+                arrConvert.push(((letra.toUpperCase().charCodeAt(i) - codLetra1 + parseInt(desloc)) % (alfab.length+1)) + codLetra1); 
                 str = String.fromCharCode(arrConvert[i])
-                newArrConvert.push(str)
-                
-                console.log(`Codigo convertido da letra digitada: ${arrConvert[i]}`)
-                console.log(`Teste de conta: ${(((letra.charCodeAt(i)-codLetra1)+ parseInt(desloc)) % 26) + codLetra1}`)
-                console.log(`Letra convertida após o calculo ${str}`);
+                newArrConvert.push(str);
             }
-            
-            // console.log(arr2.fromCharCode());  // retorna "ABC"
-        
-            var str1 = newArrConvert.toString().replace(/,/g,"");
-            var item = document.createElement('p');
-            item.innerText = str1;
-            result.appendChild(item);
-        }else if(codific == 'decodificar'){
-            console.log('decodificar selecionado')
+
+            var str1 = newArrConvert.toString().toLowerCase().replace(/,/g,"");
+            result.innerText = str1;
+
+        }else{
+            var desloc = document.querySelector("#desloc").value;
+            var letra = document.querySelector("#input-text").value;
+            var alfab = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"];
+            var codLetra1 = 'A'.charCodeAt(0);
+            var arrConvert = [];
+            var str = "";
+            var newArrConvert = [];
+    
+            for(var i = 0; i < letra.length; i++) {
+                arrConvert.push(((letra.toUpperCase().charCodeAt(i) - codLetra1 - parseInt(desloc)) % (alfab.length+1)) + codLetra1); 
+                str = String.fromCharCode(arrConvert[i])
+                newArrConvert.push(str);
+            }
+                    
+            var str1 = newArrConvert.toString().toLowerCase().replace(/,/g,"");
+            result.innerText = str1;
         }
     }else{
-        alert("Campos vazios ou invalidos!")
+        alert("Valor inválido ou campos vazios!");
     }
-    
-    console.log(arr);
-    console.log(arrString)
-    // console.log(arr2.fromCharCode());  // retorna "ABC"
-
-    var str1 = arrString.toString().replace(/,/g,"");
-    var item = document.createElement('p');
-    item.innerText = str1;
-    result.appendChild(item);
 })
 
+var btnCod = document.querySelector(".btnCod");
+var titleBtn = document.querySelector(".titleBtn");
+var title = document.querySelector(".title");
+var muda = true;
 
+btnCod.addEventListener("click", () => {
+   
+    if(muda){
+        titleBtn.innerText = 'Codificando com Base64';
+        btnCod.innerText = 'Cifra de Cesar';
+        muda = false;
+    }else{
+        titleBtn.innerText = 'Codificando com Cifra de Cesar';
+        btnCod.innerText = 'Base64';
+        muda = true;
+    }
+})

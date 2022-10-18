@@ -8,30 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Cifra de Cesar</h2>
-    <form class="form">
-        <input id="input-text" type="text" placeholder="Digite sua mensagem" required maxlength="14">
-        <input id="desloc" type="number" placeholder="Digite o nivel" min="1" max="25" required maxlength="2">
+    <h1>Codifique sua mensagem com:</h1>
+    <section>
+        <div class="boxFunc">
+            <div class="boxTitle">
+                <p class="titleBtn">Codificando com Cifra de Cesar</p>
+                <button class="btnCod">Base64</button>
+            </div>
+            <form class="form">
+                <input id="input-text" type="text" placeholder="Digite sua mensagem" required maxlength="14">
+                <input id="desloc" type="number" placeholder="Digite o nivel" min="1" max="25" required maxlength="2">
+                
+                <div>
+                    <input type="radio" name="change" id="codificar" value="true">
+                    <label for="codificar">Codificar</label>
+                    <input type="radio" name="change" id="decodificar" value="false">
+                    <label for="decodificar">Decodificar</label>
+                </div>
 
-        <div>
-            <label for="codificar">
-                Codificar
-                <input type="radio" name="change" id="codificar" value="codificar">
-            </label>
-            <label for="decodificar">
-                Decodificar
-                <input type="radio" name="change" id="decodificar" value="decodificar">
-            </label>
+                <input id="btn" type="button" value="Enviar">
+            </form>    
         </div>
-
-        <input id="btn" type="button" value="Enviar">
-    </form>    
-    <div>
-        <p id="result"></p>
-    </div>
-    <ul>
-        
-    </ul>
+        <div class="box_result">
+            <p id="result"></p>
+        </div>
+    </section>
 </body>
     <script src="script.js"></script>
 </html>
