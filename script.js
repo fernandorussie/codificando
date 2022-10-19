@@ -4,12 +4,9 @@ var form = document.querySelector("form");
 var codVerificador = 1;
 
 function CopyText() {
-    let textoCopiado = document.getElementById("#result");
-    textoCopiado.select();
-    textoCopiado.setSelectionRange(0, 99999)
-    document.execCommand("copy");
+    var content = document.getElementById('result').innerHTML;
+    navigator.clipboard.writeText(content)
 }
-
 function SetCesar(){
     codVerificador = 1;
     document.querySelector("#cifracesar").style.backgroundColor = 'white';
@@ -18,6 +15,9 @@ function SetCesar(){
     document.querySelector("#base64").style.color = 'white';
     document.querySelector("#desloc").style.display = 'initial';
     document.querySelector("#desloc").setAttribute("required")
+    document.querySelector("#input-text").value = '';
+    document.querySelector("#input-text") = '';
+    document.querySelector("#result") = '';
 }
 function SetBase64(){
     codVerificador = 2;
@@ -27,8 +27,23 @@ function SetBase64(){
     document.querySelector("#cifracesar").style.color = 'white';
     document.querySelector("#desloc").style.display = 'none';
     document.querySelector("#desloc").removeAttribute("required");
+    document.querySelector("#input-text").value = '';
+    document.querySelector("#input-text") = '';
+    document.querySelector("#result") = '';
 }
 
+function SetCodificar(){
+    document.querySelector("#labelCodificar").style.backgroundColor = '#4433ff';
+    document.querySelector("#labelCodificar").style.color = 'white';
+    document.querySelector("#labelDecodificar").style.backgroundColor = 'white';
+    document.querySelector("#labelDecodificar").style.color = '#4433ff';
+}
+function SetDecodificar(){
+    document.querySelector("#labelCodificar").style.backgroundColor = 'white';
+    document.querySelector("#labelCodificar").style.color = '#4433ff';
+    document.querySelector("#labelDecodificar").style.backgroundColor = '#4433ff';
+    document.querySelector("#labelDecodificar").style.color = 'white';
+}
 
 btn.addEventListener("click", function(ev) {
     if(codVerificador == 1){
@@ -53,6 +68,7 @@ btn.addEventListener("click", function(ev) {
     
                 var str1 = newArrConvert.toString().toLowerCase().replace(/,/g,"");
                 result.innerText = str1;
+                document.querySelector("#input-text").value = '';
     
             }else{
                 var desloc = document.querySelector("#desloc").value;
@@ -71,6 +87,7 @@ btn.addEventListener("click", function(ev) {
                         
                 var str1 = newArrConvert.toString().toLowerCase().replace(/,/g,"");
                 result.innerText = str1;
+                document.querySelector("#input-text").value = '';
             }
         }else{
             alert("Valor inválido ou campos vazios!");
@@ -85,28 +102,16 @@ btn.addEventListener("click", function(ev) {
                 var dadoCodificado = window.btoa(letra);
                 
                 result.innerText = dadoCodificado;
-    
+                document.querySelector("#input-text").value = '';
             }else{
                 var letra = document.querySelector("#input-text").value;
                 var dadoDecodificado = window.atob(letra);
                 
                 result.innerText = dadoDecodificado;
+                document.querySelector("#input-text").value = '';
             }
         }else{
             alert("Valor inválido ou campos vazios!");
         }
     }
 })
-
-function SetCodificar(){
-    document.querySelector("#labelCodificar").style.backgroundColor = '#4433ff';
-    document.querySelector("#labelCodificar").style.color = 'white';
-    document.querySelector("#labelDecodificar").style.backgroundColor = 'white';
-    document.querySelector("#labelDecodificar").style.color = '#4433ff';
-}
-function SetDecodificar(){
-    document.querySelector("#labelCodificar").style.backgroundColor = 'white';
-    document.querySelector("#labelCodificar").style.color = '#4433ff';
-    document.querySelector("#labelDecodificar").style.backgroundColor = '#4433ff';
-    document.querySelector("#labelDecodificar").style.color = 'white';
-}
