@@ -14,7 +14,7 @@
  
 var btn = document.querySelector("#btn");
 var result = document.querySelector("#result");
-var form = document.querySelector(".form");
+var form = document.querySelector("form");
 
 
 btn.addEventListener("click", function(ev) {
@@ -63,20 +63,19 @@ btn.addEventListener("click", function(ev) {
     }
 })
 
-var btnCod = document.querySelector(".btnCod");
-var titleBtn = document.querySelector(".titleBtn");
-var title = document.querySelector(".title");
-var muda = true;
 
-btnCod.addEventListener("click", () => {
-   
-    if(muda){
-        titleBtn.innerText = 'Codificando com Base64';
-        btnCod.innerText = 'Cifra de Cesar';
-        muda = false;
-    }else{
-        titleBtn.innerText = 'Codificando com Cifra de Cesar';
-        btnCod.innerText = 'Base64';
-        muda = true;
-    }
-})
+var btnRadio = document.querySelector(".radio-switch__input");
+
+function SetCodificar(){
+    document.querySelector("#labelCodificar").style.backgroundColor = '#4433ff';
+    document.querySelector("#labelCodificar").style.color = 'white';
+    document.querySelector("#labelDecodificar").style.backgroundColor = 'white';
+    document.querySelector("#labelDecodificar").style.color = 'black';
+
+}
+function SetDecodificar(){
+    document.querySelector("#labelCodificar").style.backgroundColor = 'white';
+    document.querySelector("#labelCodificar").style.color = 'black';
+    document.querySelector("#labelDecodificar").style.backgroundColor = '#4433ff';
+    document.querySelector("#labelDecodificar").style.color = 'white';
+}
