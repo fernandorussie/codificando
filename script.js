@@ -3,6 +3,13 @@ var result = document.querySelector("#result");
 var form = document.querySelector("form");
 var codVerificador = 1;
 
+function CopyText() {
+    let textoCopiado = document.getElementById("#result");
+    textoCopiado.select();
+    textoCopiado.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+}
+
 function SetCesar(){
     codVerificador = 1;
     document.querySelector("#cifracesar").style.backgroundColor = 'white';
