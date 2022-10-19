@@ -10,32 +10,31 @@
 <body>
     <h1>Codifique sua mensagem</h1>
     <section>
-        <div class="boxFunc">
-            <div class="boxBtn">
-                <button class="btnCod preSelected" id="cifracesar"  onclick="SetCesar()">Cifra de César</button>
-                <button class="btnCod" id="base64" onclick="SetBase64()">Base64</button>
+        <div class="container">
+            <div class="boxChange">
+                <button class="btnSet preSelected" id="cifracesar"  onclick="SetCesar()">Cifra de César</button>
+                <button class="btnSet" id="base64" onclick="SetBase64()">Base64</button>
             </div>
             <form>
                 <div>
-                    <textarea class="msgCod" id="input-text" cols="30" rows="10" placeholder="Escreva sua mensagem aqui:" required maxlength="24"></textarea>
-                    <div class="result">
+                    <textarea class="entryCode" id="input-text" cols="30" rows="10" placeholder="Escreva sua mensagem aqui:" required maxlength="24"></textarea>
+                    <div class="exitCode">
                         <p id="result"></p>
                     </div>
                 </div>
-                <div class="boxButtons">
+                <div class="menuButtons">
                     <span>
-                        <input class="desloc" id="desloc" type="number" placeholder="+" min="1" max="25" required maxlength="2">
+                        <input class="btnDesloc" id="desloc" type="number" placeholder="+" min="1" max="25" required maxlength="2">
                     </span>
     
-                    <span class="radio-switch">
-
-                        <label class="radio-switch__label" onclick="SetCodificar()" id="labelCodificar">
-                            <input type="radio" name="change" class="radio-switch__input" id="codificar" value="true"/>
+                    <span class="boxRadio">
+                        <label class="labelRadio" onclick="SetCodificar()" id="labelCodificar">
+                            <input class="inputRadio" type="radio" name="change" id="codificar" value="true"/>
                     
                             Codificar
                         </label>
-                        <label class="radio-switch__label" onclick="SetDecodificar()" id="labelDecodificar">
-                            <input type="radio" name="change" class="radio-switch__input" id="decodificar" value="false"/>
+                        <label class="labelRadio" onclick="SetDecodificar()" id="labelDecodificar">
+                            <input class="inputRadio" type="radio" name="change" id="decodificar" value="false"/>
                     
                             Decodificar
                         </label>
