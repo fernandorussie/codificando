@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
     <section>
         <div class="boxFunc">
             <div class="boxBtn">
-                <button class="btnCod">Cifra de César</button>
-                <button class="btnCod">Base64</button>
+                <button class="btnCod preSelected" id="cifracesar"  onclick="SetCesar()">Cifra de César</button>
+                <button class="btnCod" id="base64" onclick="SetBase64()">Base64</button>
             </div>
             <form>
                 <div>
@@ -28,8 +28,8 @@
                     </span>
     
                     <span class="radio-switch">
-                        <!-- Radio container -->
-                        <label class="radio-switch__label radio-switch__label--selected" onclick="SetCodificar()" id="labelCodificar">
+
+                        <label class="radio-switch__label" onclick="SetCodificar()" id="labelCodificar">
                             <input type="radio" name="change" class="radio-switch__input" id="codificar" value="true"/>
                     
                             Codificar
@@ -42,7 +42,9 @@
                     </span>
     
                     <span>
-                        <input class="btnEnviar" id="btn" type="button" value="Enviar">
+                        <button class="btnEnviar" id="btn" >
+                            Transformar
+                        </button>
                     </span>
                 </div>
             </form>

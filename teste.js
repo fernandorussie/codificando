@@ -1,3 +1,16 @@
+// var btn = document.querySelector("#btn");
+// var result = document.querySelector("#result");
+
+// btn.addEventListener("click", function(ev) {
+//     ev.preventDefault();
+//     var input = document.querySelector("#input-text").value;
+//     for (var i = 0; i < input.length; i++) {
+//         var item = document.createElement('p');
+//         item.innerText = `${input[i]} = ${input.charCodeAt(i)}`;
+//         result.appendChild(item);
+//     }
+// })
+
 
 var btn = document.querySelector("#btn");
 var result = document.querySelector("#result");
