@@ -5,7 +5,13 @@ var codVerificador = 1;
 
 function CopyText() {
     var content = document.getElementById('result').innerHTML;
-    navigator.clipboard.writeText(content)
+    navigator.clipboard.writeText(content);
+    var modal = setInterval(function() {document.querySelector(".modal").style.display = "initial"},1);
+    setTimeout(function(){
+        document.querySelector(".modal").style.display = "none";
+        clearInterval(modal);
+    },3000)
+    
 }
 function SetCesar(){
     codVerificador = 1;
