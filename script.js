@@ -35,7 +35,7 @@ function SetBase64(){
     document.querySelector("#desloc").removeAttribute("required");
     document.querySelector("#input-text").value = '';
     document.querySelector("#input-text") = '';
-    document.querySelector("#result") = '';
+    document.querySelector("#result") = ''; 
 }
 
 function SetCodificar(){
