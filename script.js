@@ -13,7 +13,7 @@ function CopyText() {
     },3000)
     
 }
-function SetCesar(){
+function SetCesar(){ 
     codVerificador = 1;
     document.querySelector("#cifracesar").style.backgroundColor = 'white';
     document.querySelector("#cifracesar").style.color = '#4433ff';
