@@ -5,4 +5,4 @@
 
 - **Cifra de César**: É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra, que se apresenta no alfabeto abaixo dela um número fixo de vezes. Por exemplo, com uma troca de três posições, A seria substituído por D, B se tornaria E, e assim por diante. O nome do método é em homenagem a Júlio César, que o usou para se comunicar com os seus generais.
 
-<img scr="./assets/layout codificando.png" alt="imagem do site">
+<img scr="./assets/codificando.png" alt="imagem do site">
